@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Seguradora</string>
+    <string name="ligar">Ligar para a central</string>
+    <string name="localiza">Oficina mais próxima</string>
+    <string name="pedido">Registrar pedido do cliente</string>
+    <string name="preco">Consultar tabela de preços</string>
+    <string name="cliente">Informações do cliente</string>
+    <string name="cliente_nome">Nome do cliente</string>
+    <string name="cliente_celular">Celular do cliente (Sem DDD)</string>
+    <string name="cliente_veiculo">Veículo</string>
+    <string name="cliente_peça">Peça a ser trocada</string>
+    <string name="enviar">Enviar</string>
+    <string name="pedidoFinal">Pedido realizado com sucesso!</string>
+    <string name="closerPlace">A oficina mais perto de você está localizada em:</string>
+    <string name="actualLocalization">Sua atual localização:</string>
+    <string name="oficinas">Escolha uma das oficinas para ligar</string>
+    <string name="oficina1">Oficina Moura - Al</string>
+    <string name="oficina2">Oficina Gasparetto - SC</string>
+    <string name="oficina3">AutoZone - SP</string>
+    <string name="oficina_call">Ligar</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="goToMap">Ver no mapa</string>
+</resources>

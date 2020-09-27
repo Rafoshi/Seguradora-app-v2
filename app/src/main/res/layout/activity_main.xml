@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="329dp"
+        android:layout_height="211dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="107dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="107dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnLigar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ligar" />
+
+        <Button
+            android:id="@+id/btnLocaliza"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/localiza" />
+
+        <Button
+            android:id="@+id/btnPedido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pedido" />
+
+        <Button
+            android:id="@+id/btnPreco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/preco" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

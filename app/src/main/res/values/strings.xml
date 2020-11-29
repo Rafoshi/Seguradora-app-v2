@@ -18,6 +18,7 @@
     <string name="oficina2">Oficina Gasparetto - SC</string>
     <string name="oficina3">AutoZone - SP</string>
     <string name="oficina_call">Ligar</string>
+    <string name="save">Salvar</string>
     <string name="title_activity_maps">Map</string>
     <string name="goToMap">Ver no mapa</string>
 </resources>

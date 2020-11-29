@@ -33,7 +33,16 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Locale;
 
@@ -52,7 +61,7 @@ public class nearest extends AppCompatActivity {
     double lat,log;
 
     TextView txtActualPostion, txtNearsertPostion;
-    Button btnMap;
+    Button btnMap,btnSave;
 
     FusedLocationProviderClient fusedLocationProviderClient;
     LocationRequest locationRequest;
@@ -123,6 +132,7 @@ public class nearest extends AppCompatActivity {
         txtNearsertPostion = (TextView) findViewById(R.id.txtNearestLocaation);
 
         btnMap = (Button) findViewById(R.id.btnMap);
+        btnSave = (Button) findViewById(R.id.button4) ;
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
@@ -144,6 +154,17 @@ public class nearest extends AppCompatActivity {
                 intent.putExtra(EXTRA_MESSAGE_LOCAL_NAME,localName);
 
                 startActivity(intent);
+            }
+        });
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    createFile(southLocal);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -230,6 +251,28 @@ public class nearest extends AppCompatActivity {
             } else {
 
             }
+        }
+    }
+
+    public void createFile (String name) throws FileNotFoundException {
+        File file = new File(this.getFilesDir(), "filename");
+        String filename = "myfile";
+        String fileContents = name;
+
+        FileInputStream fis = this.openFileInput("asfd");
+        InputStreamReader inputStreamReader =
+                new InputStreamReader(fis, StandardCharsets.UTF_8);
+        StringBuilder stringBuilder = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(inputStreamReader)) {
+            String line = reader.readLine();
+            while (line != null) {
+                stringBuilder.append(line).append('\n');
+                line = reader.readLine();
+            }
+        } catch (IOException e) {
+            // Error occurred when opening raw file for reading.
+        } finally {
+            String contents = stringBuilder.toString();
         }
     }
 }

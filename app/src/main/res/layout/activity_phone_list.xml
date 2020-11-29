@@ -41,6 +41,12 @@
             android:layout_height="wrap_content"
             android:text="@string/oficina_call" />
 
+        <Button
+            android:id="@+id/save1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save" />
+
         <TextView
             android:id="@+id/textView12"
             android:layout_width="match_parent"
@@ -54,6 +60,12 @@
             android:layout_height="wrap_content"
             android:text="@string/oficina_call" />
 
+        <Button
+            android:id="@+id/save2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save" />
+
         <TextView
             android:id="@+id/textView14"
             android:layout_width="match_parent"
@@ -66,5 +78,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/oficina_call" />
+
+        <Button
+            android:id="@+id/save3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

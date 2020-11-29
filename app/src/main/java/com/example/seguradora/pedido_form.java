@@ -2,7 +2,9 @@ package com.example.seguradora;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -46,6 +48,10 @@ public class pedido_form extends AppCompatActivity {
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences preferences =  getSharedPreferences("Preferences",
+                        Context.MODE_PRIVATE);
+                SharedPreferences.Editor ed = preferences.edit();
+
                 String nameCli = name.getText().toString();
                 String phoneCli = phone.getText().toString();
                 String vehicleCli = vehicle.getText().toString();
@@ -54,10 +60,10 @@ public class pedido_form extends AppCompatActivity {
                 if (validatePhone(phoneCli) && isNull(nameCli) && isNull(vehicleCli) && isNull(pieceCli)) {
                     Intent intent = new Intent(pedido_form.this, pedido_final.class);
 
-                    intent.putExtra(EXTRA_MESSAGE_NAME, nameCli);
-                    intent.putExtra(EXTRA_MESSAGE_PHONE, phoneCli);
-                    intent.putExtra(EXTRA_MESSAGE_VEHICLE, vehicleCli);
-                    intent.putExtra(EXTRA_MESSAGE_PIECE, pieceCli);
+                    ed.putString("nameCli",name.getText().toString());
+                    ed.putString("phoneCli",phone.getText().toString());
+                    ed.putString("vehicleCli",vehicle.getText().toString());
+                    ed.putString("pieceCli",piece.getText().toString());
 
                     startActivity(intent);
                 }
